@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
-	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"id": "image-search",
+	"name": "Image Search",
+	"version": "0.0.1",
+	"minAppVersion": "1.5.12",
+	"description": "Search and insert images using Google API",
+	"author": "Mohammad Razeghi",
+	"authorUrl": "https://github.com/razeghi71",
+	"fundingUrl": "https://www.buymeacoffee.com/marzghi",
 	"isDesktopOnly": false
 }
