@@ -35,11 +35,9 @@ ul.responsive-gallery img {
     width: 100%;
     padding: 20px;
     text-align: center;
-    background-color: var(--background-modifier-error);
-    color: var(--text-normal);
+    color: var(--text-error);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 10px 0;
     font-size: 1rem;
     font-weight: bold;
 }

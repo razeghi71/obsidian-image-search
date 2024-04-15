@@ -54,9 +54,8 @@ export class QueryModal extends Modal {
       });
     } catch (error) {
       this.imageList
-        .createEl("li")
-        .createDiv({ cls: "error" })
-        .setText("Search was unsuccessful. Please check the API Key and Search engine ID in settings.");
+        .createDiv({ cls: "responsive-gallery-error" })
+        .setText("Search was unsuccessful. Please check your connection, the API Key and Search engine ID in settings.");
     }
   }
 
@@ -64,3 +63,4 @@ export class QueryModal extends Modal {
     this.contentEl.empty();
   }
 }
+
