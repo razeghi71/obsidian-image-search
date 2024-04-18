@@ -26,8 +26,8 @@ export class ImageSearchSettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		new Setting(containerEl)
-			.setName('API KEY')
-			.setDesc('Google Programmable Search Engine API KEY')
+			.setName('API key')
+			.setDesc('Google Programmable Search Engine API key')
 			.addText(text => text
 				.setPlaceholder('')
 				.setValue(this.plugin.settings.apiKey)
