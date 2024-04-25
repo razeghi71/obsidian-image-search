@@ -16,17 +16,36 @@ export class QueryModal extends Modal {
   }
 
   onOpen() {
-    this.contentEl.createEl("h1", { text: "What do you want to search for?" });
+    const form = this.contentEl.createEl('form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.search();
+    });
 
-    new Setting(this.contentEl)
-      .setName("What are you looking for?")
-      .addText(text => text.onChange(value => this.result = value));
+    const input = this.contentEl.createEl('input', {
+      attr: {
+        type: 'text',
+        placeholder: "What are you looking for?"
+      },
+      cls: 'setting-input input-style',
+    });
+    input.addEventListener('input', (event) => {
+      this.result = (event.target as HTMLInputElement).value;
+    });
+    form.appendChild(input);
 
-    new Setting(this.contentEl)
-      .addButton(btn => btn
-        .setButtonText("Search")
-        .setCta()
-        .onClick(() => this.search()));
+    const buttonContainer = this.contentEl.createEl('div', {
+      cls: 'button-container-style'
+    });
+    const button = this.contentEl.createEl('button', {
+      attr: {
+        type: 'submit'
+      },
+      cls: 'mod-cta setting-btn button-style',
+    });
+    button.textContent = "Search Google Images";
+    buttonContainer.appendChild(button);
+    form.appendChild(buttonContainer);
 
     this.imageList = this.contentEl.createEl("ul", { cls: "responsive-gallery" });
   }
@@ -34,7 +53,7 @@ export class QueryModal extends Modal {
   private async callApi(query: string): Promise<string[]> {
     const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${this.settings.searchEngineId}&searchType=image&num=10&key=${this.settings.apiKey}`;
     const response = await requestUrl(url);
-    
+
     if (response.status < 200 || response.status >= 300) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
