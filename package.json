@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-image-search",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"description": "This is image search plugin for Obsidian (https://obsidian.md)",
 	"main": "main.js",
 	"scripts": {
