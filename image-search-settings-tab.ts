@@ -3,12 +3,10 @@ import ImageSearchPlugin from './main'
 
 export interface ImageSearchPluginSettings {
 	apiKey: string;
-	searchEngineId: string;
 }
 
 export const DEFAULT_SETTINGS: ImageSearchPluginSettings = {
-	apiKey: '',
-	searchEngineId: ''
+	apiKey: ''
 }
 
 export class ImageSearchSettingTab extends PluginSettingTab {
@@ -27,23 +25,12 @@ export class ImageSearchSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('API key')
-			.setDesc('Google Programmable Search Engine API key')
+			.setDesc('Brave Search API key (get one at https://brave.com/search/api/)')
 			.addText(text => text
 				.setPlaceholder('')
 				.setValue(this.plugin.settings.apiKey)
 				.onChange(async (value) => {
 					this.plugin.settings.apiKey = value;
-					await this.plugin.saveSettings();
-				}));
-
-		new Setting(containerEl)
-			.setName('Search engine ID')
-			.setDesc('Google Programmable Search Engine ID')
-			.addText(text => text
-				.setPlaceholder('')
-				.setValue(this.plugin.settings.searchEngineId)
-				.onChange(async (value) => {
-					this.plugin.settings.searchEngineId = value;
 					await this.plugin.saveSettings();
 				}));
 	}
