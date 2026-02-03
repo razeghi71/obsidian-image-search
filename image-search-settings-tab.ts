@@ -23,9 +23,18 @@ export class ImageSearchSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
+		const apiKeyDesc = document.createDocumentFragment();
+		apiKeyDesc.append(
+			'Brave Search API key. ',
+			apiKeyDesc.createEl('a', {
+				text: 'Learn how to get an API key',
+				href: 'https://github.com/razeghi71/obsidian-image-search#how-to-get-a-brave-search-api-key'
+			})
+		);
+
 		new Setting(containerEl)
 			.setName('API key')
-			.setDesc('Brave Search API key (get one at https://brave.com/search/api/)')
+			.setDesc(apiKeyDesc)
 			.addText(text => text
 				.setPlaceholder('')
 				.setValue(this.plugin.settings.apiKey)
