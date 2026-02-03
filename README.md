@@ -1,36 +1,34 @@
 # Image Search Plugin for Obsidian
 
-The Image Search plugin enables Obsidian users to search for images via Google's Programmable Search Engine directly within Obsidian. This document provides detailed instructions on how to set up and use the plugin.
+The Image Search plugin enables Obsidian users to search for images via Brave Search API directly within Obsidian. This document provides detailed instructions on how to set up and use the plugin.
 
 ## Installation
 
 1. **Download** the Image Search plugin from Obsidian's community plugins list.
-2. **Install** the plugin via Obsidian’s settings under "Community Plugins".
+2. **Install** the plugin via Obsidian's settings under "Community Plugins".
 3. **Enable** the plugin from the "Installed Plugins" tab.
 
 ## Prerequisites
 
-Before using the Image Search plugin, you must obtain a Google API Key and a Search Engine ID from Google's Programmable Search Engine.
+Before using the Image Search plugin, you must obtain a Brave Search API key.
 
+### How to Get a Brave Search API Key
 
-### Step 1: Create a Search Engine ID
+1. **Go to** the Brave Search API dashboard: [https://api.search.brave.com](https://api.search.brave.com)
+2. **Sign up** for a Brave account if you don't already have one.
+3. **Register** for API access. You'll need to provide a credit card for verification (as an anti-fraud measure), but you won't be charged on the free plan.
+4. **Choose a plan**:
+   - **Free AI**: $0 - Up to 2,000 queries/month, 1 query/second
+   - **Base AI**: $5.00 per 1,000 requests - Up to 20M queries/month
+   - **Pro AI**: $9.00 per 1,000 requests - Unlimited queries/month
+5. **Copy your API key** from the dashboard and keep it secure.
 
-1. **Go to** the Google Programmable Search Engine site: [Programmable Search Engine](http://programmablesearchengine.google.com) and Create a new search engine.
-2. Name your Search Engine.
-3. In the **What to search?** section, select **"Search the entire web"**.
-4. **Enable "Image Search"** in the "Search settings". You may also enable "Safe search" if desired.
-5. **Click "Create"**. After creation, you will be redirected to a page where your Search Engine ID is displayed. **Copy this ID and keep it secure.**
-
-### Step 2: Obtain a Google API Key
-
-1. At the bottom of the search engine configuration page, in the **"Programmatic Access"** section, click on **"Get Started"** next to "Custom Search JSON API. Limit of 10,000 queries per day."
-2. Click the **"Get Key"** button which will open a modal.
-3. **Select the search engine** you created in the previous step. You will then be provided with an API Key. **Copy this key and keep it secure.**
+For more details, visit the [Brave Search API pricing page](https://api.search.brave.com/app/plans).
 
 ## Configuration
 
 1. **Open plugin settings** in Obsidian by navigating to Settings -> Community Plugins -> Image Search.
-2. **Enter your Google API Key and Search Engine ID** in the respective fields provided in the plugin settings.
+2. **Enter your Brave Search API Key** in the field provided in the plugin settings.
 
 ## Usage
 
@@ -41,7 +39,7 @@ Before using the Image Search plugin, you must obtain a Google API Key and a Sea
 
 ## Support
 
-For support you can [buy me a coffee](https://www.buymeacoffee.com/marzghi). 
+For support you can [buy me a coffee](https://www.buymeacoffee.com/marzghi).
 
 For feature requests, or to report issues, please visit the [Github Page](https://github.com/razeghi71/obsidian-image-search) for this plugin.
 

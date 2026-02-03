@@ -3,12 +3,10 @@ import ImageSearchPlugin from './main'
 
 export interface ImageSearchPluginSettings {
 	apiKey: string;
-	searchEngineId: string;
 }
 
 export const DEFAULT_SETTINGS: ImageSearchPluginSettings = {
-	apiKey: '',
-	searchEngineId: ''
+	apiKey: ''
 }
 
 export class ImageSearchSettingTab extends PluginSettingTab {
@@ -25,25 +23,23 @@ export class ImageSearchSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
+		const apiKeyDesc = document.createDocumentFragment();
+		apiKeyDesc.append(
+			'Brave Search API key. ',
+			apiKeyDesc.createEl('a', {
+				text: 'Learn how to get an API key',
+				href: 'https://github.com/razeghi71/obsidian-image-search#how-to-get-a-brave-search-api-key'
+			})
+		);
+
 		new Setting(containerEl)
 			.setName('API key')
-			.setDesc('Google Programmable Search Engine API key')
+			.setDesc(apiKeyDesc)
 			.addText(text => text
 				.setPlaceholder('')
 				.setValue(this.plugin.settings.apiKey)
 				.onChange(async (value) => {
 					this.plugin.settings.apiKey = value;
-					await this.plugin.saveSettings();
-				}));
-
-		new Setting(containerEl)
-			.setName('Search engine ID')
-			.setDesc('Google Programmable Search Engine ID')
-			.addText(text => text
-				.setPlaceholder('')
-				.setValue(this.plugin.settings.searchEngineId)
-				.onChange(async (value) => {
-					this.plugin.settings.searchEngineId = value;
 					await this.plugin.saveSettings();
 				}));
 	}
